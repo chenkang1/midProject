@@ -1,0 +1,767 @@
+const express = require('express')
+const Mock = require('mockjs')
+const app = express()
+
+//跨域
+app.all('*',(req,res,next)=>{
+    res.header('Access-Control-Allow-Origin','*')
+    next()
+})
+
+//头部
+app.get('/pic/top',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                img:'/static/pic/top.png',
+                img1:'/static/pic/lc.png',
+                img2:'/static/pic/down.png',
+                img3:'/static/pic/search.png',
+                img4:'/static/pic/index_icon_sea.png',
+                title:'世界杯',
+                title1:'@cword(2,4)',
+                title2:'@cword(2,4)',
+                title3:'@cword(2,4)',
+                title4:'@cword(2,4)',
+                title5:'@cword(2,4)',
+                title6:'@cword(2,4)',
+                title7:'@cword(2,4)',
+            }
+        ]
+    }
+    res.send({
+        error:0,
+        message:'it is ok',
+        data:Mock.mock(result).data
+    })
+})
+//轮播图
+app.get('/pic/lun',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imglun:'/static/lunbo/1.png'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/2.png'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/3.png'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/4.png'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/5.png'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/6.jpg'
+            },{
+                id:'@id',
+                imglun:'/static/lunbo/7.png'
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'it is ok',
+        data:Mock.mock(result).data
+    })
+})
+//首页十个首栏
+app.get('/pic/list',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgsrc:'/static/pic/1.png',
+                title:'超市便利'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/pic/2.png',
+                title:'新鲜果蔬'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/3.png',
+                title:'烘焙蛋糕'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/4.png',
+                title:'鲜花绿植'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/5.png',
+                title:'医药健康'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/6.png',
+                title:'新人专享'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/7.png',
+                title:'VIP会员'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/8.png',
+                title:'帮助中心'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/9.png',
+                title:'分享有礼'
+            },{
+                id:'@id',
+                imgsrc:'/static/pic/10.png',
+                title:'签到'
+            },
+          ]
+    }
+    res.send({
+        error:0,
+        message:'it is ok',
+        data:Mock.mock(result).data
+    })
+}),
+//轮播下面两张展示图
+app.get('/pic/show',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgshow:'/static/pic/11.png'
+            },{
+                id:'@id',
+                imgshow:'/static/pic/12.jpg'
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//超市
+app.get('/pic/chao',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgchao:'/static/pic/13.jpg',
+                title1:'@ctitle(5)',
+                title2:'@ctitle(5)'
+            },{
+                id:'@id',
+                imgchao:'/static/pic/14.png',
+                title1:'@ctitle(5)',
+                title2:'@ctitle(5)'
+            },{
+                id:'@id',
+                imgchao:'/static/pic/15.png',
+                title1:'@ctitle(5)',
+                title2:'@ctitle(5)'
+            },{
+                id:'@id',
+                imgchao:'/static/pic/16.png',
+                title1:'@ctitle(5)',
+                title2:'@ctitle(5)'
+            }
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//秒杀
+app.get('/pic/miaosha',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                title:'更多',
+                imgmiaosha:'/static/pic/17.png',
+                imgright:'/static/pic/18.png'
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//秒杀下面滑动图
+app.get('/pic/miaohua',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/1.jpg',
+                title:'@ctitle(10)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/2.png',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/3.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/4.png',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/5.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/6.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/7.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/8.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/9.jpg',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/10.png',
+                title:'@ctitle(15)',
+                pri1:'¥1',
+                pri2:'¥1.9'
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/tu1/11.png',
+                title1:'查看更多'
+            }
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//app专享
+app.get('/pic/appen',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgappen:'/static/tu1/12.png',
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//三页轮播
+app.get('/pic/sanlun',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                img:'/static/tu1/13.png',
+            },
+            {
+                id:'@id',
+                img:'/static/tu1/14.jpg',
+            },{
+                id:'@id',
+                img:'/static/tu1/15.png',
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//附近的店铺
+app.get('/shop/list',(req,res)=>{
+    let result = {
+        'data|6':[
+            {
+                id:'@id',
+                imgsrc:'/static/pic/c1.png',
+                title:'沃尔玛-新街口店',
+                'star|4-5':'★',
+                'num|4.1':1,
+                title4:'月售1千 +',
+                'num1|30-50':1,
+                word:'分钟 |',
+                'num2|1-50':1,
+                word2:'km',
+                title1:'起送¥0 | 基础运费¥4',
+                'yhj|4-5':[
+                    {title3:'@ctitle(5)',
+                            'type|1':['满减','领劵'],
+                            'ttt|1':['8折劵','满99减15 ,满65减15 ,满58减8']
+                    }
+                ]
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/pic/c2.jpg',
+                title:'苏果羊皮巷生活超市',
+                'star|4-5':'★',
+                'num|4.1':1,
+                title4:'月售1千 +',
+                'num1|30-50':1,
+                word:'分钟 |',
+                'num2|1-50':1,
+                word2:'km',
+                title1:'起送¥0 | 基础运费¥4',
+                'yhj|2-5':[
+                    {title3:'@ctitle(5)',
+                            'type|1':['满减','领劵'],
+                            'ttt|1':['8折劵','满99减15 ,满65减15 ,满58减8']
+                    }
+                ]
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/pic/c3.jpg',
+                title:'益丰-香铺营',
+                'star|4-5':'★',
+                'num|4.1':1,
+                title4:'月售1千 +',
+                'num1|30-50':1,
+                word:'分钟 |',
+                'num2|1-50':1,
+                word2:'km',
+                title1:'起送¥0 | 基础运费¥4',
+                'yhj|2-5':[
+                    {title3:'@ctitle(5)',
+                            'type|1':['满减','领劵'],
+                            'ttt|1':['8折劵','满99减15 ,满65减15 ,满58减8']
+                    }
+                ]
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/pic/c4.png',
+                title:'永辉超市-茂业天地店',
+                'star|4-5':'★',
+                'num|4.1':1,
+                title4:'月售1千 +',
+                'num1|30-50':1,
+                word:'分钟 |',
+                'num2|1-50':1,
+                word2:'km',
+                title1:'起送¥0 | 基础运费¥4',
+                'yhj|2-5':[
+                    {title3:'@ctitle(5)',
+                            'type|1':['满减','领劵'],
+                            'ttt|1':['8折劵','满99减15 ,满65减15 ,满58减8']
+                    }
+                ]
+            },
+            {
+                id:'@id',
+                imgsrc:'/static/pic/c5.jpg',
+                title:'苏果好的便利-太平南路店',
+                'star|4-5':'★',
+                'num|4.1':1,
+                title4:'月售1千 +',
+                'num1|30-50':1,
+                word:'分钟 |',
+                'num2|1-50':1,
+                word2:'km',
+                title1:'起送¥0 | 基础运费¥4',
+                'yhj|2-5':[
+                    {title3:'@ctitle(5)',
+                            'type|1':['满减','领劵'],
+                            'ttt|1':['8折劵','满99减15 ,满65减15 ,满58减8']
+                    }
+                ]
+            },
+
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    }) 
+}),
+//第二页开始-------沃尔玛详情页
+
+//头部
+app.get('/shop/top',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                imgsrc:'/static/pic/5b03abdeNd7e3e942.png',
+                title1:'沃尔玛-新街口店',
+                title2:'达达专送 | 60分钟',
+                title3:'基础运费4元',
+                imgsrc2:'/static/pic/focus.png',
+                'yhj|9':[
+                    {title4:'@ctitle(5)',
+                            'type|1':'满减',
+                            'ttt|1':['百事零食蛮18减6','满99减15 ,满65减15 ,满58减8']
+                    }
+                ],
+                title5:'公告',
+                imgsrc3:'/static/pic/store_act_new_conpon.png',
+                word:'@cword(10,20)',
+                'yhj1|5':[
+                    {title7:'录取后当日有效',
+                            'ttt|1':['百事零食蛮18减6','满99减15 ,满65减15 ,满58减8'],
+                            'title8|1':['七折','8.8折','15元','8元'],
+                            'title9|1':['最高可享','满59元可用','最高可领','满29-40元享折扣'],
+                            'title10|1':['适用于本店','限购买部分商品','限VIP专享'],
+                    }
+                ],
+            },
+            
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//左侧类目
+app.get('/shop/menus',(req,res)=>{
+    let result = {
+        'data|10-30':[
+            {
+                id:'@id',
+                text:'@cword(2,4)',
+                'children|2-10':[
+                    {
+                        id:'@id',
+                        text:'@cword(2,4)',
+                    }
+                ],
+            },
+            
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//右侧详情页
+app.get('/shop/product',(req,res)=>{
+    let result = {
+        'data|10-30':[
+            {
+                id:'@id',
+                num:0,
+                title:'@ctitle(20,30)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg'],
+                img1:'/static/pic/addNumSprite.png',
+                title1:'@cword(15,20)',
+                'title2|1':['秒杀','满折'],
+                'num2|1-100':0,
+                // 'num|10-100.1':0
+            },
+            {
+                id:'@id',
+                num:0,                
+                title:'@ctitle(20,30)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg'],
+                img1:'/static/pic/addNumSprite.png',
+                title1:'@cword(15,20)',
+                'title2|1':['秒杀','满折'],
+
+                'num2|1-100':0,
+                // 'num|10-100.1':0
+            },
+            {
+                id:'@id',
+                num:0,
+                
+                title:'@ctitle(20,30)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg'],
+                img1:'/static/pic/addNumSprite.png',
+                title1:'@cword(15,20)',
+                'title2|1':['秒杀','满折'],
+
+                'num2|1-100':0,
+                // 'num|10-100.1':0
+            },
+            {
+                id:'@id',
+                num:0,
+                
+                title:'@ctitle(20,30)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg'],
+                img1:'/static/pic/addNumSprite.png',
+                title1:'@cword(15,20)',
+                'title2|1':['秒杀','满折'],
+
+                'num2|1-100':0,
+                // 'num|10-100.1':0
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//店铺评价
+app.get('/shop/pjia',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                title:'@ctitle(10,15)',
+                img:'/static/pic/evaluateHeader.jpg',
+                img1:'/static/pic/serviceMark.png',
+                title1:'j****f',
+                star:'★★★★★',
+                time:'@now',
+                'title2|1':['价格优惠','包装完好','商品新鲜','质量优','口味佳'],
+                'title3|1':['价格优惠','包装完好','商品新鲜','质量优','口味佳'],
+                'title4|1':['价格优惠','包装完好','商品新鲜','质量优','口味佳'],
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//bear页面
+app.get('/bear/lunbo',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                img:'/static/pic/bear/1.webp',
+            },
+            {
+                id:'@id',
+                img:'/static/pic/bear/2.webp',
+            },
+            {
+                id:'@id',
+                img:'/static/pic/bear/3.webp',
+            },
+            {
+                id:'@id',
+                img:'/static/pic/bear/4.webp',
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+// bear页面更多详情页
+app.get('/more/qita',(req,res)=>{
+    let result = {
+        data:[
+            {
+                id:'@id',
+                img1:'/static/pic/more/1.jpg',
+                img2:'/static/pic/more/2.jpg',
+                img3:'/static/pic/more/3.jpg',
+                img4:'/static/pic/more/4.jpg',
+                img5:'/static/pic/more/5.jpg',
+                img6:'/static/pic/more/6.jpg',
+                img7:'/static/pic/more/7.jpg',
+                img8:'/static/pic/more/8.jpg',
+                img9:'/static/pic/more/9.jpg',
+                img10:'/static/pic/more/10.jpg',
+                img11:'/static/pic/more/11.jpg',
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+// my页面图片
+app.get('/my/pic',(req,res)=>{
+    let result = {
+        data:[
+            {
+                id:'@id',
+                img1:'/static/pic/my/1.png',
+                img2:'/static/pic/my/2.png',
+                img3:'/static/pic/my/3.png',
+                img4:'/static/pic/my/4.png',
+                img5:'/static/pic/my/5.png',
+                img6:'/static/pic/my/6.png',
+                img7:'/static/pic/my/7.png',
+                img8:'/static/pic/my/8.png',
+                img9:'/static/pic/my/9.png',
+                img10:'/static/pic/my/10.png',
+                img11:'/static/pic/my/11.png',
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//sort页面伪造数据
+//左侧类目
+app.get('/sort/menus',(req,res)=>{
+    let result = {
+        'data|10':[
+            {
+                id:'@id',
+                text:'@cword(2,4)',
+                'children|2-10':[
+                    {
+                        id:'@id',
+                        text:'@cword(2,4)',
+                    }
+                ],
+            },
+            
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//右侧详情页
+app.get('/sort/product',(req,res)=>{
+    let result = {
+        'data|5-10':[
+            {
+                id:'@id',
+                title:'@ctitle(2,5)',
+                'img|1':['/static/pic/sort/1.jpg','/static/pic/sort/2.jpg','/static/pic/sort/3.jpg','/static/pic/sort/4.jpg','/static/pic/sort/5.jpg','/static/pic/sort/6.jpg','/static/pic/sort/7.jpg','/static/pic/sort/8.jpg','/static/pic/sort/9.jpg','/static/pic/sort/10.jpg','/static/pic/sort/11.jpg','/static/pic/sort/12.jpg'],
+                
+            },
+            
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//购物车页面
+app.get('/gocar/product',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                'img|1':['/static/pic/gocar/1.jpg','/static/pic/gocar/2.jpg','/static/pic/gocar/3.jpg','/static/pic/gocar/4.jpg','/static/pic/gocar/5.jpg','/static/pic/gocar/6.jpg','/static/pic/gocar/7.jpg'],
+                'img1|1':['/static/pic/gocar/1.jpg','/static/pic/gocar/2.jpg','/static/pic/gocar/3.jpg','/static/pic/gocar/4.jpg','/static/pic/gocar/5.jpg','/static/pic/gocar/6.jpg','/static/pic/gocar/7.jpg'],
+                
+                'price|9-1000.1':1
+            },
+            
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+//订单页面
+app.get('/order/product',(req,res)=>{
+    let result = {
+        'data':[
+            {
+                id:'@id',
+                title:'@ctitle(2,3)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                'img1|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                'img2|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                
+                'time2':'@now',
+                'num|10-500.1':0
+            },
+            {
+                id:'@id',
+                title:'@ctitle(2,3)',
+                'price|1-100.2':0,
+                'store|1-10':0,
+                'img|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                'img1|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                'img2|1':['/static/pic/5b28ccadNfa53d093.jpg','/static/pic/5b0fc118N015f4b31.jpg','/static/pic/5ae86d79Nabae4eec.jpg','/static/pic/5b19e39cN73005151.jpg','/static/pic/order/1.jpg','/static/pic/order/2.jpg','/static/pic/order/3.jpg','/static/pic/order/4.jpg','/static/pic/order/5.jpg','/static/pic/order/6.jpg'],
+                
+                'time2':'@now',
+                'num|10-500.1':0
+            },
+        ]
+    }
+    res.send({
+        error:0,
+        message:'ok',
+        data:Mock.mock(result).data
+    })
+}),
+
+app.listen(8088)
