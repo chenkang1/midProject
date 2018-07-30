@@ -1,9 +1,9 @@
 <template>
     <div class="sort">
         <!-- 头部搜索 -->
-        <div class="head">
-            <div class="head1">
-                <span class="head1-1"></span>
+        <div id="head">
+            <div id="head1">
+                <span id="head1-1"></span>
                 <input type="text" placeholder="搜索附近的商家、商品">
             </div>
         </div>
@@ -113,11 +113,11 @@ export default {
         height: 100%;
         overflow: hidden;
     }
-    .head{
+    #head{
         height: 44px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2)
     }
-    .head1{
+    #head1{
         height: 30px;
         width: 90%;
         background: #F4F4F4;
@@ -127,20 +127,20 @@ export default {
         top:7px;
         left: 20px;
     }
-    .head1-1{
+    #head1-1{
         width: 44px;
         height: 44px;
         background: url(/static/pic/sort/1.png) no-repeat center -5px;
         background-size: 44px auto;
         float: left;
     }
-    .head input{
+    #head input{
         background: #F4F4F4;
         float: left;
         border: none;
         outline: none;
         text-align: left;
-        line-height: 31px;
+        line-height: 30px;
     }
     .midd{
         display: flex;

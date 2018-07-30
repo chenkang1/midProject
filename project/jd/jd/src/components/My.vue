@@ -232,7 +232,8 @@ export default {
     .redb{
         background: url(/static/pic/my/r.png) no-repeat;
         height: 85px;
-        background-size:auto 85px;
+        width: 100%;
+        background-size:100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     /* 我的关注一栏 */
